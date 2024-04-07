@@ -1,0 +1,23 @@
+<div class="flex">
+    <mat-form-field class="search">
+        <!-- <mat-label>Clearable input</mat-label> -->
+        <input matInput type="text" placeholder="Busca tu héroe..." [(ngModel)]="search" (input)="applyFilter()" style="text-transform: uppercase;">
+    </mat-form-field>
+    <button mat-raised-button color="primary"  (click)="createHero()">Crear Heroe</button>
+</div>
+<div *ngIf="!carga" class="flex">
+   <h2>Cargando...</h2>
+</div>
+<div class="grid" *ngIf="carga">
+    <div *ngFor="let hero of filteredHeroes" class="space">
+        <app-hero-card [hero]="hero" (delete)="deleteHero($event)"></app-hero-card>
+    </div>
+</div>
+<button mat-icon-button (click)="prevPage()" [disabled]="currentPage === 0">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  
+  <button mat-icon-button (click)="nextPage()" [disabled]="!carga || filteredHeroes.length < pageSize">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  

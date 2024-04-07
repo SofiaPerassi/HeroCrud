@@ -1,0 +1,16 @@
+.example-card {
+    width: 350px;
+    height: 350px;
+}
+  
+.example-header-image {
+    background-image: url('../../../assets/images/thumbnail.jpg');
+    background-size: cover;
+    background-position: center;
+}
+  
+.flex{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}

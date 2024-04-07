@@ -1,0 +1,26 @@
+.flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search{
+    width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+app-hero-card {
+    width: calc(33.33% - 10px);
+    margin-bottom: 20px;
+}
+
+.space{
+    margin-bottom: 20px;
+}
